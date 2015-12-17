@@ -186,7 +186,7 @@ return result                             //return the result with new value
 
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {                           //every takes two parameters, the array to iterate through ,and callback
-    return _.reduce(trueSofar,function(value){                           //return reduce function to iterate over accumulator trueSofar,with a function takes one parameter
+    return _.reduce(collection,function(trueSofar value){                           //return reduce function to iterate over accumulator trueSofar,with a function takes one parameter
       return trueSofar&& iteartor(value);                              //set the initial value as true, it will continue be true when trueSofar AND the next iterated value is true.
     },true);
   };
@@ -194,7 +194,7 @@ return result                             //return the result with new value
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
   _.some = function(collection, iterator) {                           //same as reduce expect the starting value is false, and use logical operator ||
-     return _.reduce(trueSofar,function(value){                          
+     return _.reduce(collection,function(trueSofar,value){                          
       return trueSofar || iteartor(value);                              
     },false);
   };
